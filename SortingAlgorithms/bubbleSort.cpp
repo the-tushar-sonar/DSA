@@ -17,14 +17,19 @@ void bubbleSort(int *arr, int n) // Time Complexity --> O(n^2)
         bool isSwap = false;
         for (int j = 0; j < n - i - 1; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (arr[j] > arr[j + 1])   // '>' for ascending order and '<' for descending order
+            {
+                // swap the elements
+                swap(arr[j], arr[j + 1]);
+                isSwap = true;
+            }
             {
                 swap(arr[j], arr[j + 1]);
                 isSwap = true;
             }
-            if (!isSwap)
+            if (!isSwap)  // if no two elements were swapped by inner loop, then break
             {
-                // array is already sorted
+                cout << "Array is sorted" << endl;
                 return;
             }
         }
