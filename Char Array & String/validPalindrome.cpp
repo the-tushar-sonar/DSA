@@ -2,7 +2,7 @@
 #include <cstring>
 using namespace std;
 
-//  Leetcode 125
+//  Leetcode : 125
 
 bool isPalindrome(char word[], int n) // O(n)
 {
