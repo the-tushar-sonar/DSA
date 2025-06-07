@@ -14,6 +14,8 @@ Explanation: [2,3] has the largest product 6.
 Input: intervals =nums = [-2,0,-1]
 Output: 0
 Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
+
+link : https://leetcode.com/problems/maximum-product-subarray
 */
 
 int maxProduct(int nums[], int n)
