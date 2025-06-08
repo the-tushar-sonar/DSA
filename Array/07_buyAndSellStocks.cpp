@@ -22,7 +22,8 @@ void maxProfit(int *prices, int n) // O(n+n) = O(2n) = O(n)
     cout << "Max Profit is " << maxProfit << endl;
 }
 
-int maxProfitO(vector<int> &prices)
+// link : https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+int maxProfitO(vector<int> &prices)  // More optimized solution with vector
 {
     int minPrice = INT_MAX;
     int maxProfit = 0;
