@@ -1,5 +1,6 @@
 #include <iostream>
 #include <climits>
+#include <vector>
 using namespace std;
 
 void maxProfit(int *prices, int n) // O(n+n) = O(2n) = O(n)
@@ -21,12 +22,26 @@ void maxProfit(int *prices, int n) // O(n+n) = O(2n) = O(n)
     cout << "Max Profit is " << maxProfit << endl;
 }
 
+int maxProfitO(vector<int> &prices)
+{
+    int minPrice = INT_MAX;
+    int maxProfit = 0;
+
+    for (int price : prices)
+    {
+        minPrice = min(minPrice, price);
+        maxProfit = max(maxProfit, price - minPrice);
+    }
+    return maxProfit;
+}
+
 int main()
 {
-    int prices[] = {7, 1, 5, 3, 6, 4};
+    // int prices[] = {7, 1, 5, 3, 6, 4};
+    vector<int> prices = {7, 1, 5, 3, 6, 4};
     int n = sizeof(prices) / sizeof(int);
 
-    maxProfit(prices, n);
+    cout << maxProfitO(prices) << endl;
 
     return 0;
 }
