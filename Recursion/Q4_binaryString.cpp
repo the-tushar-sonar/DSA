@@ -2,25 +2,28 @@
 #include <string>
 using namespace std;
 
-// void binString(int n, int lastPlace, string ans)
-// {
-//     if (n == 0)
-//     {
-//         cout << ans << endl;
-//         return;
-//     }
+/*
+void binString(int n, int lastPlace, string ans)
+{
+    if (n == 0)
+    {
+        cout << ans << endl;
+        return;
+    }
 
-//     if (lastPlace != 1)
-//     {
-//         binString(n - 1, 0, ans + '0');
-//         binString(n - 1, 1, ans + '1');
-//     }
-//     else
-//     {
-//         binString(n - 1, 0, ans + '0');
-//     }
-// }
+    if (lastPlace != 1)
+    {
+        binString(n - 1, 0, ans + '0');
+        binString(n - 1, 1, ans + '1');
+    }
+    else
+    {
+        binString(n - 1, 0, ans + '0');
+    }
+}
+*/
 
+// without using lastPlace
 void binString(int n, string ans)
 {
     if (n == 0)
@@ -29,7 +32,7 @@ void binString(int n, string ans)
         return;
     }
 
-    if (ans[ans.size() - 1] != '1')
+    if (ans.empty() || ans[ans.size() - 1] != '1') // also check if empty
     {
         binString(n - 1, ans + '0');
         binString(n - 1, ans + '1');
@@ -43,7 +46,7 @@ void binString(int n, string ans)
 int main()
 {
     string ans = "";
-    binString(3, ans);
+    binString(5, ans);
 
     return 0;
 }
